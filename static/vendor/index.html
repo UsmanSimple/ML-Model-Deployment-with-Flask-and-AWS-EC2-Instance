@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Life Expectancy Data Set Prediction</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-fixed">
+
+    <div  class="banner-area text-center text-normal text-light shadow dark bg-fixed" style="background-image: url(1.jpg);">
+
+        <section class="signup" style="">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form">
+                        <h1>This App implements Machine Learning to predict results which had been trained with Life Expectancy dataset. The model learns     from the data and predict 96% accuracy.</h1>
+                        <p>Enter the values in the required format below</p>
+                        <br>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contry">Country</label>
+                                <input type="text" class="form-input" name="contry" id="contry"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="year">Year</label>
+                                <input type="text" class="form-input" name="year" id="year" />
+                            </div>
+                            <div class="form-group">
+                                <label for="status">Status</label>
+                                <input type="text" class="form-input" name="status" id="status" />
+                            </div>                            
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bmi">BMI</label>
+                                <input type="text" class="form-input" name="bmi" id="bmi" />
+                            </div>
+                            <div class="form-group">
+                                <label for="adult_mortality">Adult Mortality</label>
+                                <input type="text" class="form-input" name="adult_mortality" id="adult_mortality" />
+                            </div>
+                            <div class="form-group">
+                                <label for="infant_deaths">Infant Deaths</label>
+                                <input type="text" class="form-input" name="infant_deaths" id="infant_deaths" />
+                            </div>                            
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="alcohol">Alcohol</label>
+                                <input type="text" class="form-input" name="alcohol" id="alcohol" />
+                            </div>
+                            <div class="form-group">
+                                <label for="percentage_expenditure">Percentage Expenditure</label>
+                                <input type="text" class="form-input" name="percentage_expenditure" id="percentage_expenditure" />
+                            </div>
+                            <div class="form-group">
+                                <label for="hepatitis_b">Hepatitis B</label>
+                                <input type="text" class="form-input" name="hepatitis_b" id="hepatitis_b" />
+                            </div>                            
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="incomegroup">Income Group</label>
+                                <input type="text" class="form-input" name="incomegroup" id="incomegroup" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Region">Region</label>
+                                <input type="text" class="form-input" name="Region" id="Region" />
+                            </div>
+                            <div class="form-group">
+                                <label for="under_five_deaths">Under Five Death</label>
+                                <input type="text" class="form-input" name="under_five_deaths" id="under_five_deaths" />
+                            </div>                            
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="Polio">Polio</label>
+                                <input type="text" class="form-input" name="Polio" id="Polio" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Total_Expenditure">Total Expenditure</label>
+                                <input type="text" class="form-input" name="Total_Expenditure" id="Total_Expenditure" />
+                            </div>
+                            <div class="form-group">
+                                <label for="GDP">GDP</label>
+                                <input type="text" class="form-input" name="GDP" id="GDP" />
+                            </div>                            
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="Diphteria">Diphteria</label>
+                                <input type="text" class="form-input" name="Diphteria" id="Diphteria" />
+                            </div>
+                            <div class="form-group">
+                                <label for="HIV_AIDS">HIV/AIDS</label>
+                                <input type="text" class="form-input" name="HIV_AIDS" id="HIV_AIDS" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Measles">Measles</label>
+                                <input type="text" class="form-input" name="Measles" id="Measles" />
+                            </div>                            
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="thinness_10_19_years">Thinness 10-19 years</label>
+                                <input type="text" class="form-input" name="thinness_10_19_years" id="thinness_10_19_years" />
+                            </div>
+                            <div class="form-group">
+                                <label for="thinness_5_9_years">Thinness 5-9 years</label>
+                                <input type="text" class="form-input" name="thinness_5_9_years" id="thinness_5_9_years" />
+                            </div>
+                             <div class="form-group">
+                                <label for="income_composition_of_resourcesles">Income Composition Of Resources</label>
+                                <input type="text" class="form-input" name="income_composition_of_resourcesles" id="income_composition_of_resourcesles" />
+                            </div>  
+                        </div>
+                        <div class="form-row">                        
+                            <div class="form-group">
+                                <label for="Schooling">Schooling</label>
+                                <input type="text" class="form-input" name="Schooling" id="Schooling" />
+                            </div>
+                                                        
+                            <div class="form-group">
+                                <label for="Population">Population</label>
+                                <input type="text" class="form-input" name="Population" id="Population" />
+                            </div>                          
+                        </div>                                                                        
+                        <div class="form-group">
+                            <input type="submit" name="predict" id="predict" class="form-submit" value="predict"/>
+                        </div>
+                        <div class="form-row">                        
+                            <div class="form-group">
+                                {{ prediction_text }}
+                            </div>
+
+                        </div>  
+                    </form>
+                    <br>
+                    <br>
+
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
