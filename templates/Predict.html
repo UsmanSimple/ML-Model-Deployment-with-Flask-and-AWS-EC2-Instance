@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.min.css">
 
     <!-- Main css -->
+    
     <link href="{{ url_for('static', filename ="css/style.css")}}" rel="stylesheet" />
     <!--link href="css/style.css" rel="stylesheet"/-->
 </head>
@@ -26,122 +27,156 @@
                 <div class="signup-content">
                     <form action="{{url_for('predict')}}" method="POST" id="signup-form" class="signup-form">
                         <h1>This App implements Machine Learning to predict results which had been trained with Life Expectancy dataset. The model learns     from the data and predict 96% accuracy.</h1>
-                        <p>Enter the values in the required format below</p>
+                        <p style="">Enter the values in the required format below</p>
                         <br>
-                        <div class="form-row">
-                            <div class="form-group">
+                        <div class="">
+                            <div class="">
                                 <label for="country">Country</label>
                                 <input type="text" class="form-input" name="country" id="nation"/>
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="year">Year</label>
                                 <input type="text" class="form-input" name="year" id="year" />
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="status">Status</label>
-                                <input type="text" class="form-input" name="status" id="status" />
+                                <div class="dropdown">
+                                  <select  class="dropbtn" name="status" >
+                                  <div id="myDropdown" class="dropdown-content">
+                                    <br>
+                                    <option value = 'Developing'>Developing</option>
+                                    <option value = 'Developed'>Developed</option>
+                                  </div>
+                                  </select> 
+                                </div>
                             </div>                            
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
+                        <div class="">
+                            <div class="">
                                 <label for="bmi">BMI</label>
                                 <input type="text" class="form-input" name="bmi" id="bmi" />
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="adult_mortality">Adult Mortality</label>
                                 <input type="text" class="form-input" name="adult_mortality" id="adult_mortality" />
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="infant_deaths">Infant Deaths</label>
                                 <input type="text" class="form-input" name="infant_deaths" id="infant_deaths" />
                             </div>                            
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
+                        <div class="">
+                            <div class="">
                                 <label for="alcohol">Alcohol</label>
                                 <input type="text" class="form-input" name="alcohol" id="alcohol" />
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="percentage_expenditure">Percentage Expenditure</label>
                                 <input type="text" class="form-input" name="percentage_expenditure" id="percentage_expenditure" />
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="hepatitis_b">Hepatitis B</label>
                                 <input type="text" class="form-input" name="hepatitis_b" id="hepatitis_b" />
                             </div>                            
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
+                        <div class="">
+                            <div class="">
                                 <label for="incomegroup">Income Group</label>
-                                <input type="text" class="form-input" name="incomegroup" id="incomegroup" />
-                            </div>
-                            <div class="form-group">
+                                <div class="dropdown">
+                                  <select  class="dropbtn" name="status" >
+                                  <div id="myDropdown" class="dropdown-content">
+                                    <br>
+                                    <option value = 'Lower middle income'>Lower middle income</option>
+                                    <option value = 'Upper middle income' >Upper middle income</option>
+                                    <option value = 'Low income' >Low income</option>
+                                    <option value = 'High income'>High income</option>
+                                  </div>
+                                  </select> 
+                                </div>
+                            <div class="">
                                 <label for="Region">Region</label>
-                                <input type="text" class="form-input" name="Region" id="Region" />
+                                <div class="dropdown">
+                                  <select  class="dropbtn" name="status" >
+                                  <div id="myDropdown" class="dropdown-content">
+                                    <br>
+                                    <option value = 'Sub-Saharan Africa'>Sub-Saharan Africa</option>
+                                    <option value = 'South Asia' >South Asia</option>
+                                    <option value = 'Europe & Central Asia' >Europe & Central Asia</option>
+                                    <option value = 'Latin America & Caribbean'>Latin America & Caribbean</option>
+                                    <option value = 'East Asia & Pacific' >East Asia & Pacific</option>
+                                    <option value = 'Middle East & North Africa' >Middle East & North Africa</option>
+                                    <option value = 'North America'>North America</option>
+                                  </div>
+                                  </select> 
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="under_five_deaths">Under Five Death</label>
                                 <input type="text" class="form-input" name="under_five_deaths" id="under_five_deaths" />
                             </div>                            
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
+                        <div class="">
+                            <div class="">
                                 <label for="polio">Polio</label>
                                 <input type="text" class="form-input" name="polio" id="polio" />
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="total_expenditure">Total Expenditure</label>
                                 <input type="text" class="form-input" name="total_expenditure" id="total_expenditure" />
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="gdp">GDP</label>
                                 <input type="text" class="form-input" name="gdp" id="gdp" />
                             </div>                            
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
+                        <div class="">
+                            <div class="">
                                 <label for="diphtheria">Diphteria</label>
                                 <input type="text" class="form-input" name="diphtheria" id="diphtheria" />
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="hiv_aids">HIV/AIDS</label>
                                 <input type="text" class="form-input" name="hiv_aids" id="hiv_aids" />
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="measles">Measles</label>
                                 <input type="text" class="form-input" name="measles" id="measles" />
                             </div>                            
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
+                        <div class="">
+                            <div class="">
                                 <label for="thinness_10_19_years">Thinness 10-19 years</label>
                                 <input type="text" class="form-input" name="thinness_10_19_years" id="thinness_10_19_years" />
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="thinness_5_9_years">Thinness 5-9 years</label>
                                 <input type="text" class="form-input" name="thinness_5_9_years" id="thinness_5_9_years" />
                             </div>
-                             <div class="form-group">
+                             <div class="">
                                 <label for="income_composition_of_resourcesles">Income Composition Of Resources</label>
                                 <input type="text" class="form-input" name="income_composition_of_resourcesles" id="income_composition_of_resourcesles" />
                             </div>  
                         </div>
-                        <div class="form-row">                        
-                            <div class="form-group">
+                        <div class="">                        
+                            <div class="">
                                 <label for="schooling">Schooling</label>
                                 <input type="text" class="form-input" name="schooling" id="schooling" />
                             </div>
                                                         
-                            <div class="form-group">
+                            <div class="">
                                 <label for="population">Population</label>
                                 <input type="text" class="form-input" name="population" id="population" />
                             </div>                          
-                        </div>                                                                        
+                        </div>   
+                        <br>                                                                     
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">predict</button>
+                            <button type="submit" class="form-submit">predict</button>
                         </div>
-                        <div class="form-row">                        
-                            <div class="form-group">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="">                        
+                            <div class="">
                                 {{ prediction_text }}
                             </div>
 

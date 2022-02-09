@@ -40,7 +40,7 @@ def predict():
     infant_deaths = int(req.get("infant_deaths",default=72))
     alcohol = float(req.get("alcohol",default=13))
     percentage_expenditure = float(req.get("percentage_expenditure",default=2300))
-    hepatitis_b = int(req.get("hepatitis_b",default=88))
+    hepatitis_b = float(req.get("hepatitis_b",default=88))
     measles = float(req.get("measles",default=6708))
     bmi = float(req.get("bmi",default=25))
     under_five_deaths = int(req.get("under_five_deaths",default=114))
@@ -77,7 +77,7 @@ def predict():
     output = round(prediction[0])
 
         #passing value gotten to template for rendering
-    return render_template("Predict.html",prediction_text='The Average Life Expectancy of {} in year {} is {} years'.format(country, year, output))    
+    return render_template("Predict.html",prediction_text='The Average life expectancy for {} in year {} is {} years'.format(country, year, output))    
 
 @app.route('/predict_api',methods=['POST'])
 def results():
