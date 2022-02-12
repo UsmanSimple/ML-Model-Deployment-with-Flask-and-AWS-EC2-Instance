@@ -41,7 +41,7 @@ def predict():
     alcohol = float(req.get("alcohol",default=13))
     percentage_expenditure = float(req.get("percentage_expenditure",default=2300))
     hepatitis_b = float(req.get("hepatitis_b",default=88))
-    measles = float(req.get("measles",default=6708))
+    measles = float(req.get("measles",default=6718))
     bmi = float(req.get("bmi",default=25))
     under_five_deaths = int(req.get("under_five_deaths",default=114))
     polio = float(req.get("polio",default=80))
@@ -93,5 +93,7 @@ def results():
     return jsonify(output)
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == '__main__':
+   app.run(host = '0.0.0.0', port = 8080)
+#if __name__ == "__main__":
+#    app.run(debug=True)
