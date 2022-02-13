@@ -1,3 +1,4 @@
+# import required libraries
 from flask import Flask
 from flask import render_template, request, url_for, jsonify
 import pickle
@@ -5,13 +6,17 @@ import pandas
 import os
 import numpy 
 
+# Assign parameters such as static folder names- static
+
 STATIC_DIR = os.path.abspath('./static')
+
+#initialize the flask app
 app = Flask(__name__,static_folder=STATIC_DIR)
 
-app = Flask(__name__) #initialize the flask app
+# load the data via pickle file for prediction
+model = pickle.load(open('models/pipeline_LGBM.pkl','rb')) 
 
-model = pickle.load(open('models/pipeline_LGBM.pkl','rb')) # load the data via pickle
-
+# state the columns for inputing variables
 column =['country', 'year', 'status', 'adult_mortality', 'infant_deaths',
        'alcohol', 'percentage_expenditure', 'hepatitis_b', 'measles', 'bmi',
        'under-five_deaths', 'polio', 'total_expenditure', 'diphtheria',
@@ -19,11 +24,13 @@ column =['country', 'year', 'status', 'adult_mortality', 'infant_deaths',
        'income_composition_of_resources', 'schooling', 'region', 'incomegroup',
        'Population']
 
+# rendering the homepage template with index function
 @app.route("/")
 def index():
     return render_template("Home.html")
 
-
+# rendering the predict.html as it contains the parameters needed for the prediction.
+# it requires both the GET for the default value prediction and POST request for prediction if pred.html forms is filled by the User 
 @app.route('/predict',methods=['GET','POST'])
 def predict():
     '''
@@ -57,14 +64,14 @@ def predict():
     incomegroup = req.get("incomegroup",default='Lower middle income')
     population = float(req.get("population",default=214140000))
 
-        #storing in array
+    #storing the data in array format
     array = numpy.array([country,year,status,adult_mortality,infant_deaths,
                             alcohol,percentage_expenditure, hepatitis_b, measles, bmi, under_five_deaths, polio, total_expenditure,
                             diphtheria, hiv_aids, gdp, thinness_10_19_years, thinness_5_9_years, income_composition_of_resources,  
                                  schooling, region, incomegroup, population]
                                 ).reshape(1,23)
 
-    #creates a dataframe to hold the data and perform transformation
+    #creates a dataframe to hold the data
     data = pandas.DataFrame(data=array,columns=['country', 'year', 'status', 'adult_mortality', 'infant_deaths',
        'alcohol', 'percentage_expenditure', 'hepatitis_b', 'measles', 'bmi',
        'under-five_deaths', 'polio', 'total_expenditure', 'diphtheria',
@@ -72,13 +79,14 @@ def predict():
        'income_composition_of_resources', 'schooling', 'region', 'incomegroup',
        'Population'])
 
-    #predict over the features gotten from the user
+    #predict over the features gotten from the user with the model
     prediction = model.predict(data)
     output = round(prediction[0])
 
-        #passing value gotten to template for rendering
+    #passing value gotten to Predict html template for rendering
     return render_template("Predict.html",prediction_text='The Average life expectancy for {} in year {} is {} years'.format(country, year, output))    
 
+# send direct POST requests to Flask API using the command python request.py
 @app.route('/predict_api',methods=['POST'])
 def results():
     '''
@@ -92,8 +100,10 @@ def results():
 
     return jsonify(output)
 
+# port values changes as we run on local server and in the cloud
 
 if __name__ == '__main__':
-   app.run(host = '0.0.0.0', port = 8080)
+   app.run(host = '0.0.0.0', port = 8080) # cloud
+
 #if __name__ == "__main__":
-#    app.run(debug=True)
+# app.run(debug=True) # local machine port= 5000, host address= 127.0.0.1

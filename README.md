@@ -37,3 +37,5 @@ This project has four major parts :
 4. static - This folder contains the CSS- styling sheets that is used to adjust content size, spacing, color and/pr add decorative features such as animations
 5. templates - This folder contains the HTML template to allow user to enter life expectancy features and displays the predicted average life expectancy.
 
+
+![](prediction.PNG)
