@@ -1,5 +1,5 @@
 ## ML Model Deployment with Flask and AWS EC2 Instance
-This is a demo project to better understand and practicalize how machine learning models can be deployed on production using Flask API and AWS EC2 Instance
+This is a demo project to better understand and build proficiency how machine learning models can be deployed on production using Flask API and AWS EC2 Instance
 
 ![](Life_expectancy_flask_frame_work.PNG)
 
