@@ -1,6 +1,8 @@
 ## ML Model Deployment with Flask and AWS EC2 Instance
 This is a demo project to better understand and build proficiency on how machine learning models can be deployed on production using Flask API and AWS EC2 Instance
 
+This ![article](https://usman186168.hashnode.dev/step-by-step-guide-to-deploying-ml-models-on-flask-web-application-with-aws-ec2-instance) denotes a well-detailed and explanatory on the deployment, Kindly, like and share.
+
 ![](Life_expectancy_flask_frame_work.PNG)
 
 ### Introduction/Objectives
