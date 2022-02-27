@@ -34,7 +34,7 @@ This [article](https://usman186168.hashnode.dev/step-by-step-guide-to-deploying-
 This project has six major parts :
 1.  Data - This folder contains the training data used for building the Machine learning model
 2.  model - This folder contains the pickle file for our Machine Learning model to predict life expectancy of a country based on training data in Data folder.
-3. app.py - This contains Flask APIs that receives employee details through GUI or API calls, computes the precited value based on our model and returns it.
+3. app.py - This contains Flask APIs that receives life expectancy details through GUI or API calls, computes the predicted value based on our model and returns it.
 4. request.py - This uses requests module to call APIs already defined in app.py and dispalys the returned value.
 5. static - This folder contains the CSS- styling sheets that is used to adjust content size, spacing, color and/pr add decorative features such as animations
 6. templates - This folder contains the HTML template to allow user to enter life expectancy features and displays the predicted average life expectancy.
